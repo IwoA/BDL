@@ -10,7 +10,7 @@ year <- a %>% xml_find_all("//year") %>% xml_text() %>% parse_date_time(., order
 value <- a %>% xml_find_all("//val") %>% xml_text() %>% as.numeric(.)
 result <- data.frame(unit, year, value)
 
-### Lista wszystkich miejscowoœci z kodami
+### Lista wszystkich miejscowoÅ›ci z kodami
 
 u <- read_xml("https://bdl.stat.gov.pl/api/v1/units?format=xml&page=0&page-size=100")
 
@@ -33,4 +33,4 @@ for (i in 1:as.numeric(pages)) {
 }
 
 
-write.csv(units, "dbl.csv")
+write.csv(units, "dbl.csv", fileEncoding = "UTF8")
